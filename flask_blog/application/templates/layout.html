@@ -66,15 +66,18 @@
                <li id="nav-settings">
                   <a href="#">{{ g.user.name }}</a>
                </li>
+               <li id="nav-post">
+                  <a href="{{ url_for('post.add') }}">发布</a>
+               </li>
                <li>
-                  <a href="{{ url_for('account.signout') }}">Sign out</a>
+                  <a href="{{ url_for('account.signout') }}">登出</a>
                </li>
             {% else %}
                <li id="nav-signin">
-                  <a href="{{ url_for('account.signin') }}">Sign in</a>
+                  <a href="{{ url_for('account.signin') }}">登录</a>
                </li>
                <li id="nav-signup">
-                  <a href="{{ url_for('account.signup') }}">Sign up</a>
+                  <a href="{{ url_for('account.signup') }}">注册</a>
                </li>
             {% endif %}
          </ul>

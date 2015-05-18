@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% from 'macros/_form.html' import horizontal_field, form_submit %}
+
+{% block page_title %}Sign in{% endblock %}
+{% block page_content %}
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-8">
+            <h1>Post</h1>
+
+            <form method="post" class="form-horizontal" action="{{ url_for('post.add') }}">
+               {{ form.csrf_token() }}
+
+               {{ horizontal_field(form.title) }}
+
+               {{ horizontal_field(form.content) }}
+
+               {{ form_submit('post') }}
+            </form>
+         </div>
+      </div>
+   </div>
+{% endblock %}
